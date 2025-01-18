@@ -1,7 +1,13 @@
+import { auth } from "@/auth";
 import Image from "next/image";
+import { redirect } from "next/navigation";
 import React, { PropsWithChildren } from "react";
 
-const AuthLayout = ({ children }: PropsWithChildren) => {
+const AuthLayout = async ({ children }: PropsWithChildren) => {
+  const session = await auth()
+  if (session) {
+    redirect('/')
+  }
   return (
     <main className="auth-container">
       <section className="auth-form">

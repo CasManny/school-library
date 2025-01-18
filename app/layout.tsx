@@ -4,6 +4,7 @@ import { Toaster } from "@/components/ui/toaster"
 import { SessionProvider } from 'next-auth/react'
 import "./globals.css";
 import { auth } from "@/auth";
+import { redirect } from "next/navigation";
 
 const ibmPlexsans = localFont({
   src: [
