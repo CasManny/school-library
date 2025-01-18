@@ -8,7 +8,7 @@ const AuthLayout = ({ children }: PropsWithChildren) => {
         <div className="auth-box">
           <div className="flex flex-row gap-2">
             <Image
-              src={"/public/icons/logo.svg"}
+              src={"/icons/logo.svg"}
               alt="logo"
               width={37}
               height={37}
