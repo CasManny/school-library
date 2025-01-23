@@ -17,7 +17,7 @@ export default async function Home() {
   
   return (
     <>
-      <BookOverView {...sampleBooks[1]} />
+      <BookOverView book={sampleBooks[1] } />
       <BookList
         title={"Latest Books"}
         books={sampleBooks}

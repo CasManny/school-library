@@ -2,34 +2,8 @@ import Image from "next/image";
 import { Button } from "./ui/button";
 import BookCover from "./book-cover";
 
-interface BookProps {
-  id: number;
-  title: string;
-  author: string;
-  genre: string;
-  rating: number;
-  total_copies: number;
-  available_copies: number;
-  description: string;
-  color: string;
-  cover: string;
-  video: string;
-  summary: string;
-}
-
-const BookOverView = ({
-  id,
-  title,
-  author,
-  genre,
-  rating,
-  total_copies,
-  available_copies,
-  description,
-  cover,
-  video,
-  summary,
-}: BookProps) => {
+const BookOverView = ({ book }: { book: Book }) => {
+  const {title, author, genre,rating, totalCopies, availableCopies, description, coverColor, coverUrl } = book
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
@@ -49,10 +23,10 @@ const BookOverView = ({
         </div>
         <div className="book-copies">
           <p>
-            Total Books: <span>{total_copies}</span>
+            Total Books: <span>{totalCopies}</span>
           </p>
           <p>
-            Available Books: <span>{available_copies}</span>
+            Available Books: <span>{availableCopies}</span>
           </p>
         </div>
         <p className="book-description">{description}</p>
@@ -66,15 +40,15 @@ const BookOverView = ({
           <BookCover
             variant="wide"
             className="z-10"
-            coverUrl={cover}
-            coverColor=""
+            coverUrl={coverUrl}
+            coverColor={coverColor}
           />
           <div className="absolute left-16 top-10 rotate-12 opacity-40 max-sm:hidden">
             <BookCover
               className=""
               variant="wide"
-              coverColor={""}
-              coverUrl={cover}
+              coverColor={coverColor}
+              coverUrl={coverUrl}
             />
           </div>
         </div>
