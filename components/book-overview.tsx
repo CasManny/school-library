@@ -3,7 +3,17 @@ import { Button } from "./ui/button";
 import BookCover from "./book-cover";
 
 const BookOverView = ({ book }: { book: Book }) => {
-  const {title, author, genre,rating, totalCopies, availableCopies, description, coverColor, coverUrl } = book
+  const {
+    title,
+    author,
+    genre,
+    rating,
+    totalCopies,
+    availableCopies,
+    description,
+    coverColor,
+    coverUrl,
+  } = book;
   return (
     <section className="book-overview">
       <div className="flex flex-1 flex-col gap-5">
